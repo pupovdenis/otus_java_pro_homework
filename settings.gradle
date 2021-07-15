@@ -1,2 +1,3 @@
-rootProject.name = 'otus-java-pro-hw'
+rootProject.name = 'otus-java-pro-dpupov-hw'
+include 'hw01-gradle'
 
