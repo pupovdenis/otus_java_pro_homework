@@ -1,0 +1,39 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+    id 'com.github.johnrengelman.shadow'
+}
+
+sourceCompatibility = JavaVersion.VERSION_15
+targetCompatibility = JavaVersion.VERSION_15
+
+group 'ru.pupov'
+version 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava'
+}
+
+shadowJar {
+    archiveBaseName.set('gradleHelloWorld')
+    archiveVersion.set('0.1')
+    archiveClassifier.set('')
+    manifest {
+        attributes 'Main-Class': 'ru.pupov.HelloOtus'
+    }
+}
+
+tasks.build.dependsOn tasks.shadowJar
+
+tasks.withType(JavaCompile) {
+    options.with {
+        encoding = 'UTF-8'
+    }
+}
+
+
