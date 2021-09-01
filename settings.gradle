@@ -2,5 +2,5 @@ rootProject.name = 'otus-java-pro-dpupov-hw'
 include 'hw01-gradle'
 include 'hw02-collection-and-algorithms'
 include 'hw03-test-framework'
+include 'hw04-AOP'
 include 'hw06-ATM-emulator'
-
