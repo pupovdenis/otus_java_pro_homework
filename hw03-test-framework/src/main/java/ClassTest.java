@@ -2,6 +2,8 @@ import annotations.After;
 import annotations.Before;
 import annotations.Test;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 @Test
