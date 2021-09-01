@@ -4,3 +4,5 @@ include 'hw02-collection-and-algorithms'
 include 'hw03-test-framework'
 include 'hw04-AOP'
 include 'hw06-ATM-emulator'
+include 'hw-08-json-handler'
+
