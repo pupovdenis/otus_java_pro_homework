@@ -33,6 +33,7 @@ compileJava.options.encoding = 'UTF-8'
 
 tasks.withType(JavaCompile) {
     options.with {
-        encoding = 'WINDOWS-1251'
+//        encoding = 'WINDOWS-1251'
+        encoding = 'UTF-8'
     }
 }

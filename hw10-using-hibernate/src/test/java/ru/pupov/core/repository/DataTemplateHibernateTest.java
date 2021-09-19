@@ -45,7 +45,10 @@ class DataTemplateHibernateTest extends AbstractHibernateTest {
         var loadedClient = transactionManager.doInTransaction(session ->
                 clientTemplate.findById(session, updatedClient.getId())
         );
-        assertThat(loadedClient).isPresent().get().isEqualToComparingFieldByField(updatedClient);
+        assertThat(loadedClient).isPresent()
+                .get()
+                .usingRecursiveComparison()
+                .isEqualTo(updatedClient);
 
         //when
         var clientList = transactionManager.doInTransaction(session ->

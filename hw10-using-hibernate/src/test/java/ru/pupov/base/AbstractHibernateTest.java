@@ -11,7 +11,9 @@ import ru.pupov.core.repository.DataTemplateHibernate;
 import ru.pupov.core.repository.HibernateUtils;
 import ru.pupov.core.sessionmanager.TransactionManagerHibernate;
 import ru.pupov.crm.dbmigrations.MigrationsExecutorFlyway;
+import ru.pupov.crm.model.Address;
 import ru.pupov.crm.model.Client;
+import ru.pupov.crm.model.Phone;
 import ru.pupov.crm.service.DBServiceClient;
 import ru.pupov.crm.service.DbServiceClientImpl;
 
@@ -51,7 +53,7 @@ public abstract class AbstractHibernateTest {
         configuration.setProperty("hibernate.connection.username", dbUserName);
         configuration.setProperty("hibernate.connection.password", dbPassword);
 
-        sessionFactory = HibernateUtils.buildSessionFactory(configuration, Client.class);
+        sessionFactory = HibernateUtils.buildSessionFactory(configuration, Client.class, Phone.class, Address.class);
 
         transactionManager = new TransactionManagerHibernate(sessionFactory);
         clientTemplate = new DataTemplateHibernate<>(Client.class);
