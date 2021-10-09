@@ -34,6 +34,10 @@ allprojects {
                 mavenBom("org.springframework.boot:spring-boot-dependencies:2.5.2")
             }
             dependency("com.google.guava:guava:${Versions.guava}")
+            dependency("org.testcontainers:junit-jupiter:${Versions.testcontainers}")
+            dependency("org.testcontainers:postgresql:${Versions.testcontainers}")
+            dependency("org.testcontainers:junit-jupiter:${Versions.testcontainers}")
+            dependency("org.testcontainers:postgresql:${Versions.testcontainers}")
         }
     }
 
@@ -48,7 +52,7 @@ allprojects {
 //            force("org.codehaus.jackson:jackson-core-asl:1.8.8")
 //            force("org.codehaus.jackson:jackson-mapper-asl:1.8.3")
 //            force("org.codehaus.jettison:jettison:1.1")
-//            force("net.java.dev.jna:jna:5.8.0")
+            force("net.java.dev.jna:jna:5.8.0")
         }
     }
 }
