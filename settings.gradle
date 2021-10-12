@@ -4,6 +4,7 @@ include 'hw02-collection-and-algorithms'
 include 'hw03-test-framework'
 include 'hw04-AOP'
 include 'hw06-ATM-emulator'
+include 'hw07-message-handler'
 include 'hw-08-json-handler'
+include 'hw09-ORM'
 include 'hw10-using-hibernate'
-
