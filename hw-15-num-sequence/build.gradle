@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation("ch.qos.logback:logback-classic")
+}
+
+tasks.withType(JavaCompile) {
+    options.with {
+        encoding = 'WINDOWS-1251'
+    }
+}
