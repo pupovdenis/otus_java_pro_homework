@@ -1,6 +1,7 @@
 package ru.pupov.crm.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "addresses")
@@ -50,4 +51,8 @@ public class Address implements Cloneable{
                 '}';
     }
 
+    public Address getFake() {
+        this.setStreet("street");
+        return this;
+    }
 }

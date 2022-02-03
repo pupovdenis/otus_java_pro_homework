@@ -61,32 +61,36 @@ public class Client implements Cloneable {
         return id;
     }
 
-    public void setId(Long id) {
+    public Client setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Client setName(String name) {
         this.name = name;
+        return this;
     }
 
     public Address getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public Client setAddress(Address address) {
         this.address = address;
+        return this;
     }
 
     public List<Phone> getPhones() {
         return phones;
     }
 
-    public void setPhones(List<Phone> phones) {
+    public Client setPhones(List<Phone> phones) {
         this.phones = phones;
+        return this;
     }
 
     @Override
@@ -119,5 +123,19 @@ public class Client implements Cloneable {
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (phones != null ? phones.hashCode() : 0);
         return result;
+    }
+
+    public List<Client> getFakes(int clientsNumber) {
+        if (clientsNumber < 1) return null;
+        var clientList = new ArrayList<Client>();
+        for (int i = 0; i < clientsNumber; i++) {
+            clientList.add(new Client()
+//                    .setId((long) startId + i)
+                            .setName("Client" + i)
+                    .setAddress(new Address().getFake())
+                    .setPhones(new Phone().getPhoneFakes(1))
+            );
+        }
+        return clientList;
     }
 }

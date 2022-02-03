@@ -22,6 +22,16 @@ public class MyCache<K, V> implements HwCache<K, V> {
     }
 
     @Override
+    public void clear() {
+        cache.clear();
+    }
+
+    @Override
+    public int getCacheSize() {
+        return cache.size();
+    }
+
+    @Override
     public V get(K key) {
         return cache.get(key);
     }
