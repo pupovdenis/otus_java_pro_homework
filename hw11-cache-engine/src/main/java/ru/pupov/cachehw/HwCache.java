@@ -7,6 +7,10 @@ public interface HwCache<K, V> {
 
     void remove(K key);
 
+    void clear();
+
+    int getCacheSize();
+
     V get(K key);
 
     void addListener(HwListener<K, V> listener);

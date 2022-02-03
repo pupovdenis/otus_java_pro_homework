@@ -1,6 +1,11 @@
 package ru.pupov.crm.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "addresses")
@@ -50,4 +55,8 @@ public class Address implements Cloneable{
                 '}';
     }
 
+    public Address getFake() {
+        this.setStreet("street");
+        return this;
+    }
 }

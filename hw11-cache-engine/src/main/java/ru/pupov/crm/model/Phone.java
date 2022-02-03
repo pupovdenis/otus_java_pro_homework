@@ -1,6 +1,8 @@
 package ru.pupov.crm.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "phones")
@@ -29,16 +31,18 @@ public class Phone implements Cloneable{
         return id;
     }
 
-    public void setId(long id) {
+    public Phone setId(long id) {
         this.id = id;
+        return this;
     }
 
     public String getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public Phone setNumber(String number) {
         this.number = number;
+        return this;
     }
 
     @Override
@@ -52,5 +56,17 @@ public class Phone implements Cloneable{
     @Override
     protected Phone clone() throws CloneNotSupportedException {
         return new Phone(this.id, this.number);
+    }
+
+    public List<Phone> getPhoneFakes(int numberOfPhones) {
+        if (numberOfPhones < 1) return null;
+        List<Phone> phones = new ArrayList<>();
+        for (int i = 0; i < numberOfPhones; i++) {
+            phones.add(new Phone()
+                    .setId(i)
+                    .setNumber("+1 234 " + i)
+            );
+        }
+        return phones;
     }
 }
